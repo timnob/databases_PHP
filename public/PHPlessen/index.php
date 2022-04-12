@@ -6,6 +6,10 @@ include('opdracht_begin.php');
 <?PHP toonVoorbeeldenLijst(); ?>
 <h1>Overzicht opdrachten (uitwerking):</h1>
 <?PHP toonOpdrachtenLijst(); ?>
+
+<h1>oefenplek:</h1>
+<a href='_oefen.php'>_oefen.php</a>
+
 <?PHP
 include('opdracht_eind.php');
 function toonVoorbeeldenLijst() {
