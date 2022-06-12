@@ -2,7 +2,7 @@
 include('database.php');
 session_start();
 
-if(isset($_POST['username'])) {
+if(isset($_POST['username']) ) {
 	$naam=$_POST['username'];
 	$pass=$_POST['password'];
 	$sql="SELECT * FROM accounts WHERE username='".$naam."'AND password='".$pass."'";
