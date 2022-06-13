@@ -54,7 +54,7 @@ h1 {
 .contact textarea:focus {
     border: 1px solid #c6c7c7;
 }
-.contact a {
+.contact .buttons input[type="submit"] {
     display: block;
     margin-top: 15px;
     padding: 15px;
@@ -68,7 +68,7 @@ h1 {
     cursor: pointer;
     width: 100%;
 }
-.contact a:hover {
+.contact .buttons input[type="submit"]:hover {
     background-color: #3670b3;
 }
 .contact input[name="email"] {

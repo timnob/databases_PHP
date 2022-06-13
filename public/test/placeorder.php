@@ -2,13 +2,13 @@
 // Output messages
 $responses = [];
 // Check if the form was submitted
-if (isset($_POST['email'], $_POST['subject'], $_POST['name'], $_POST['msg'])) {
+if (isset($_POST['email'], $_POST['Voornaam'], $_POST['Achternaam'], $_POST['Adres'])) {
 	// Validate email adress
 	if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 		$responses[] = 'Email is not valid!';
 	}
 	// Make sure the form fields are not empty
-	if (empty($_POST['email']) || empty($_POST['subject']) || empty($_POST['name']) || empty($_POST['msg'])) {
+	if (empty($_POST['email']) || empty($_POST['Achternaam']) || empty($_POST['Voornaam']) || empty($_POST['Adres'])) {
 		$responses[] = 'Please complete all fields!';
 	} 
 	// If there are no errors
@@ -32,6 +32,10 @@ if (isset($_POST['email'], $_POST['subject'], $_POST['name'], $_POST['msg'])) {
 		// 	// Fail
 		// 	$responses[] = 'Message could not be sent! Please check your mail server settings!';
 		// }
+	}
+	if (isset($_POST['verzenden']) && isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+		header('Location: index.php?page=home');
+		exit;
 	}
 }
 ?>
@@ -69,8 +73,10 @@ if (isset($_POST['email'], $_POST['subject'], $_POST['name'], $_POST['msg'])) {
             <?php if ($responses): ?>
 <p class="responses"><?php echo implode('<br>', $responses); ?></p>
 <?php endif; ?>
-<a href="klaar.php">Verzenden
-            </a>
+
+
+            <input type="submit" value="Verzenden" name="verzenden">
+
 		</form>
 	</body>
 </html>
