@@ -5,6 +5,7 @@ $wachtwoord = '';
 
 try
 {
+	$DBverbinding = mysqli_connect($check, $gebruikersnaam, $wachtwoord);
 	$db = new PDO($check,$gebruikersnaam,$wachtwoord);
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }

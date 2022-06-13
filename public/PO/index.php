@@ -31,7 +31,7 @@
       <div class="icoon">
           <a href="#" class="fas fa-heart"></a>
           <a href="#" class="fas fa-shopping-cart"></a>
-          <a href="login.html" class="fas fa-user"></a>
+          <a href="loginhome.html" class="fas fa-user"></a>
       </div>
   
   </header>
