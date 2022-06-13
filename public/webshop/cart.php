@@ -1,7 +1,7 @@
 <?php 
     session_start();
     require_once('./inc/config.php');    
-    require_once('./inc/helpers.php');  
+    // require_once('./inc/helpers.php');  
 
     if(isset($_GET['action'],$_GET['item']) && $_GET['action'] == 'remove')
     {
@@ -96,7 +96,7 @@
 					<button class="btn btn-primary btn-lg float-right">Checkout</button>
 				</a>
             </div>
-            <input type="submit" value="Update" name="update">
+            
         </div>
         
         <?php }?>

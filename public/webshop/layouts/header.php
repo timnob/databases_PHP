@@ -13,7 +13,7 @@
         <div class="row mt-2 mb-2">
             <div class="col-md-12 col-xs-12">
                 <h1>
-                    Cool T-Shirt Shop
+                    Winkelshopje
                 </h1>
             </div>
         </div>

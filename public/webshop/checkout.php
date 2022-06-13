@@ -8,14 +8,13 @@
     }
 
     require_once('./inc/config.php');    
-    require_once('./inc/helpers.php');  
     $cartItemCount = count($_SESSION['cart_items']);
 
     //pre($_SESSION);
 
     if(isset($_POST['submit']))
     {
-        if(isset($_POST['first_name'],$_POST['last_name'],$_POST['email'],$_POST['address'],$_POST['country'],$_POST['state'],$_POST['zipcode']) && !empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['email']) && !empty($_POST['address']) && !empty($_POST['country']) && !empty($_POST['state']) && !empty($_POST['zipcode']))
+        if(isset($_POST['first_name'],$_POST['last_name'],$_POST['email'],$_POST['address']) && !empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['email']) && !empty($_POST['address']))
         {
            $firstName = $_POST['first_name'];
 
@@ -28,15 +27,13 @@
                //validate_input is a custom function
                //you can find it in helpers.php file
                 $firstName  = ($_POST['first_name']);
-                $lastName   = validate_input($_POST['last_name']);
-                $email      = validate_input($_POST['email']);
-                $address    = validate_input($_POST['address']);
-                $address2   = (!empty($_POST['address'])?validate_input($_POST['address']):'');
-                $country    = validate_input($_POST['country']);
-                $state      = validate_input($_POST['state']); 
-                $zipcode    = validate_input($_POST['zipcode']);
+                $lastName   = ($_POST['last_name']);
+                $email      = ($_POST['email']);
+                $address    = ($_POST['address']);
+                $address2   = (!empty($_POST['address'])?($_POST['address']):'');
+               
 
-                $sql = 'insert into orders (first_name, last_name, email, address, address2, country, state, zipcode, order_status,created_at, updated_at) values (:fname, :lname, :email, :address, :address2, :country, :state, :zipcode, :order_status,:created_at, :updated_at)';
+                $sql = 'insert into orders (first_name, last_name, email, address, address2,created_at) values (:fname, :lname, :email, :address, :address2, :created_at)';
                 $statement = $db->prepare($sql);
                 $params = [
                     'fname' => $firstName,
@@ -44,12 +41,7 @@
                     'email' => $email,
                     'address' => $address,
                     'address2' => $address2,
-                    'country' => $country,
-                    'state' => $state,
-                    'zipcode' => $zipcode,
-                    'order_status' => 'confirmed',
                     'created_at'=> date('Y-m-d H:i:s'),
-                    'updated_at'=> date('Y-m-d H:i:s')
                 ];
 
                 $statement->execute($params);
@@ -142,34 +134,6 @@
                 $addressValue = $_POST['address'];
             }
 
-            if(!isset($_POST['country']) || empty($_POST['country']))
-            {
-                $errorMsg[] = 'Country is required';
-            }
-            else
-            {
-                $countryValue = $_POST['country'];
-            }
-
-            if(!isset($_POST['state']) || empty($_POST['state']))
-            {
-                $errorMsg[] = 'State is required';
-            }
-            else
-            {
-                $stateValue = $_POST['state'];
-            }
-
-            if(!isset($_POST['zipcode']) || empty($_POST['zipcode']))
-            {
-                $errorMsg[] = 'Zipcode is required';
-            }
-            else
-            {
-                $zipCodeValue = $_POST['zipcode'];
-            }
-
-
             if(isset($_POST['address2']) || !empty($_POST['address2']))
             {
                 $address2Value = $_POST['address2'];
@@ -245,38 +209,11 @@
               <input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment or suite" value="<?php echo (isset($address2Value) && !empty($address2Value)) ? $address2Value:'' ?>">
             </div>
 
-            <div class="row">
-              <div class="col-md-5 mb-3">
-                <label for="country">Country</label>
-                <select class="custom-select d-block w-100" name="country" id="country" >
-                  <option value="">Choose...</option>
-                  <option value="United States" >United States</option>
-                </select>
-              </div>
-              <div class="col-md-4 mb-3">
-                <label for="state">State</label>
-                <select class="custom-select d-block w-100" name="state" id="state" >
-                  <option value="">Choose...</option>
-                  <option value="California">California</option>
-                </select>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="zip">Zip</label>
-                <input type="text" class="form-control" id="zip" name="zipcode" placeholder="" value="<?php echo (isset($zipCodeValue) && !empty($zipCodeValue)) ? $zipCodeValue:'' ?>" >
-              </div>
-            </div>
             <hr class="mb-4">
 
-            <h4 class="mb-3">Payment</h4>
-
-            <div class="d-block my-3">
-              <div class="custom-control custom-radio">
-                <input id="cashOnDelivery" name="cashOnDelivery" type="radio" class="custom-control-input" checked="" >
-                <label class="custom-control-label" for="cashOnDelivery">Cash on Delivery</label>
-              </div>
-            </div>
            
-            <hr class="mb-4">
+           
+            
             <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit" value="submit">Continue to checkout</button>
           </form>
         </div>

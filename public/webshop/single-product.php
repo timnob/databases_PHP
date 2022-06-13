@@ -1,10 +1,9 @@
 <?php 
     session_start();
     require_once('./inc/config.php');    
-    require_once('./inc/helpers.php');  
+
     
-    if(isset($_GET['product']) && !empty($_GET['product']) && is_numeric($_GET['product']))
-    {
+    if(isset($_GET['product']) && !empty($_GET['product']) && is_numeric($_GET['product'])){
         $sql = "SELECT p.*,pdi.img from products p
             INNER JOIN product_images pdi ON pdi.product_id = p.id WHERE pdi.is_featured =:featured AND p.id =:productID";
         $handle = $db->prepare($sql);
@@ -20,13 +19,13 @@
         }
         else
         {
-            $error = '404! No record found';
+            $error = 'Geen record gevonden';
         }
 
     }
     else
     {
-        $error = '404! No record found';
+        $error = 'Geen record gevonden!';
     }
 
     if(isset($_POST['add_to_cart']) && $_POST['add_to_cart'] == 'add to cart')
@@ -87,29 +86,13 @@
         }
 
     }
-
-
-	$pageTitle = 'Cool T-Shirt Shop Single Product Page';
-	$metaDesc = 'Demo PHP shopping cart get products from database';
-	
 	
 include('layouts/header.php');
 
 ?>
 
     <?php if(isset($getProductData) && is_array($getProductData)){?>
-        <?php if(isset($successMsg) && $successMsg == true){?>
-            <div class="row mt-3">
-                <div class="col-md-12">
-                    <div class="alert alert-success alert-dismissible">
-                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <img src="<?php echo $imgUrl ?>" class="rounded img-thumbnail mr-2" style="width:40px;"><?php echo $getProductData['product_name']?> is added to cart. <a href="cart.php" class="alert-link">View Cart</a>
-                    </div>
-                </div>
-            </div>
-         <?php }?>
-
-        <div class="row mt-3">
+                <div class="row mt-3">
             <div class="col-md-5">
                 <img src="<?php echo $imgUrl;?>">
             </div>

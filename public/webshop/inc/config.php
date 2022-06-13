@@ -14,6 +14,6 @@ catch(PDOException $e)
 	die();
 }
 
-define('PRODUCT_IMG_URL','assets/product-images/');
+define('PRODUCT_IMG_URL','product-images/');
 
 ?>

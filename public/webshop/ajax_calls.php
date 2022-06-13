@@ -10,13 +10,12 @@ if(isset($_POST['action']) && $_POST['action'] == 'update-qty')
     $_SESSION['cart_items'][$sessionItem]['qty'] = $sessionItemQty;
     $_SESSION['cart_items'][$sessionItem]['total_price'] = $sessionItemQty * $productSessionPrice;
     
-    echo json_encode(['msg' => 'success']);
     exit();
 }
 
 if(isset($_POST['action']) && $_POST['action'] == 'empty')
 {
     unset($_SESSION['cart_items']);
-    echo json_encode(['msg' => 'success']);
+
     exit();
 }
