@@ -42,7 +42,7 @@
   
       <div class="icoon">
           
-          <a href="#" class="fas fa-shopping-cart"></a>
+          <a href="cart.php" class="fas fa-shopping-cart"></a>
           <a href="loginhome.html" class="fas fa-user"></a>
       </div>
   
@@ -54,7 +54,7 @@
           <h3>Proteine</h3>
           <span> natuurlijke Proteine </span>
           <p></p>
-          <a href="#" class="btn">Bestel hier!</a>
+          <a href="#products" class="btn">Bestel hier!</a>
       </div>
       
   </section>
