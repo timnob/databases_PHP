@@ -23,7 +23,7 @@
 
     //pre($_SESSION);
 ?>
-<div class="row">
+<div class="row1">
     <div class="col-md-12">
         <?php if(empty($_SESSION['cart_items'])){?>
         <table class="table">
@@ -35,7 +35,7 @@
         </table>
         <?php }?>
         <?php if(isset($_SESSION['cart_items']) && count($_SESSION['cart_items']) > 0){?>
-        <table class="table">
+        <table class="table" align="">
            <thead>
                 <tr>
                     <th>Product</th>

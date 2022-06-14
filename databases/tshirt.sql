@@ -36,7 +36,7 @@ CREATE TABLE `orders` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-INSERT INTO `orders` (`id`, `first_name`, `last_name`, `email`, `address`, `address2`, `total_price`, `created_at`) VALUES (11,'hoi','hoi','you@example.com','1234','1234',9.50,'2022-06-13 14:52:47'),(12,'ff','ff','you@example.com','111','111',0.00,'2022-06-13 15:10:08'),(13,'t','g','g@example.com','11','11',28.50,'2022-06-13 15:34:22');
+INSERT INTO `orders` (`id`, `first_name`, `last_name`, `email`, `address`, `address2`, `total_price`, `created_at`) VALUES (11,'hoi','hoi','you@example.com','1234','1234',9.50,'2022-06-13 14:52:47'),(12,'ff','ff','you@example.com','111','111',0.00,'2022-06-13 15:10:08');
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_images` (

@@ -142,15 +142,14 @@
         }
     }
 	
-	$pageTitle = 'Demo PHP Shopping cart checkout page with Validation';
-	$metaDesc = 'Demo PHP Shopping cart checkout page with Validation';
+
 	
     include('layouts/header.php');
 ?>
 <div class="row mt-3">
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Your cart</span>
+            <span class="text-muted">Winkelwagen</span>
             <span class="badge badge-secondary badge-pill"><?php echo $cartItemCount;?></span>
           </h4>
           <ul class="list-group mb-3">
@@ -166,13 +165,13 @@
             ?>
            
             <li class="list-group-item d-flex justify-content-between">
-              <span>Total (USD)</span>
+              <span>Totaal bedrag</span>
               <strong>$<?php echo number_format($total,2);?></strong>
             </li>
           </ul>
         </div>
-        <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Billing address</h4>
+        <div class="col-md-8 ">
+          <h4 class="mb-3">Factuur adress</h4>
           <?php 
             if(isset($errorMsg) && count($errorMsg) > 0)
             {
@@ -185,11 +184,11 @@
           <form class="needs-validation" method="POST">
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="firstName">First name</label>
+                <label for="firstName">Voornaam</label>
                 <input type="text" class="form-control" id="firstName" name="first_name" placeholder="First Name" value="<?php echo (isset($fnameValue) && !empty($fnameValue)) ? $fnameValue:'' ?>" >
               </div>
               <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
+                <label for="lastName">Achternaam</label>
                 <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Last Name" value="<?php echo (isset($lnameValue) && !empty($lnameValue)) ? $lnameValue:'' ?>" >
               </div>
             </div>

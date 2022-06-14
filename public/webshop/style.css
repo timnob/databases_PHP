@@ -465,15 +465,61 @@ header .fa-bars{
 .footer .credit span{
     color:var(--pink);
 }
+.row1 .col-md-12 {
+    position: fixed;
+    text-align: center;
+    padding:1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color:#333;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    padding-bottom: 9rem;
+}
+.row1 .col-md-12 tbody tr td{
+    text-align: center;
+    padding:1.5rem;
+    margin-top: 1.5rem;
+    margin-left: 10.5rem;
+    padding-top: 2.5rem;
+    padding-left: 2.5rem;
+    font-size: 3rem;
+    color:#333;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    padding-bottom: 2rem;
+}
+.row1 .col-md-12 table{
+    text-align: center;
+    padding: 100px;;
+    margin-top: 1.5rem;
+    padding-top: 2.5rem;
+    font-size: 2rem;
+    color:#333;
+    border-top: .1rem solid rgba(0,0,0,.1);
+       padding-bottom: 9rem;
+}
 
+.row mt-3  .col-md-8 order-md-1{
+    margin-top: 10000px;
+    text-align: center;
+}
 
+.row.mt-3 .col-md-12 {
+    font-size: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    
+}
 
+.row.mt-3 .col-md-7 p{
+    font-size: 20px;
+    text-align: center;
+}
 
-
-
-
-
-
+.row.mt-3 .col-md-7 h1{
+    font-size: 30px;
+    text-align: center;
+}
 
 
 

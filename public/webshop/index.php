@@ -34,9 +34,9 @@
   
       <nav class="navbar">
           <a href="#home">home</a>
-          <a href="#about">about</a>
-          <a href="#products">products</a>
-          <a href="#review">review</a>
+          <a href="#about">Over ons</a>
+          <a href="#products">producten</a>
+          <a href="#review">reviews</a>
           
       </nav>
   
@@ -54,7 +54,7 @@
           <h3>Proteine</h3>
           <span> natuurlijke Proteine </span>
           <p></p>
-          <a href="#" class="btn">shop now</a>
+          <a href="#" class="btn">Bestel hier!</a>
       </div>
       
   </section>
@@ -65,20 +65,17 @@
   
   <section class="about" id="about">
   
-      <h1 class="heading"> <span> about </span> us </h1>
+      <h1 class="heading"> <span> Over </span> ons </h1>
   
       <div class="row">
   
           <div class="video-container">
-            <img src="images/creatine.png" alt="">
-              <h3>best flower sellers</h3>
+            <img src="images/" alt="">
+              <h3>Beste suplementen van heel Nederland!</h3>
           </div>
   
-          <div class="content">
-              <h3>why choose us?</h3>
-              <p></p>
-              <p></p>
-              <a href="#" class="btn">learn more</a>
+         
+              
           </div>
   
       </div>
@@ -92,34 +89,34 @@
   <section class="icons-container">
   
       <div class="icons">
-          <img src="images/creatine.png" alt="">
+          <img src="images/joel.png" alt="">
           <div class="info">
-              <h3>free delivery</h3>
-              <span>on all orders</span>
+              <h3>Gratis levering</h3>
+              <span>Gratis levering vanaf 10 euro</span>
           </div>
       </div>
   
       <div class="icons">
-          <img src="images/creatine.png" alt="">
+          <img src="images/joel.png" alt="">
           <div class="info">
-              <h3>10 days returns</h3>
-              <span>moneyback guarantee</span>
+              <h3>Stuur terug garantie</h3>
+              <span>Geld terug garantie</span>
           </div>
       </div>
   
       <div class="icons">
-          <img src="images/creatine.png" alt="">
+          <img src="images/joel.png" alt="">
           <div class="info">
-              <h3>offer & gifts</h3>
-              <span>on all orders</span>
+              <h3>Goeie kwaliteit garantie</h3>
+              <span>Gemaakt volgens de regels van de wet</span>
           </div>
       </div>
   
       <div class="icons">
-          <img src="images/creatine.png" alt="">
+          <img src="images/joel.png" alt="">
           <div class="info">
-              <h3>secure paymens</h3>
-              <span>protected by paypal</span>
+              <h3>veilige betaalmethoden</h3>
+              <span>beschermd bij eu voorwaarden</span>
           </div>
       </div>
      
@@ -133,7 +130,7 @@
   
         
       <h1 class="heading"> Onze <span>producten</span> </h1>
-      <div class="row">
+      <div class="box">
         <?php
         foreach($getAllProducts as $product)
         {
@@ -242,7 +239,7 @@
   
   <section class="review" id="review">
   
-  <h1 class="heading"> customer's <span>review</span> </h1>
+  <h1 class="heading"> klanten <span>review</span> </h1>
   
   <div class="box-container">
   
@@ -256,10 +253,10 @@
           </div>
           <p></p>
           <div class="user">
-              <img src="images/pic-1.png" alt="">
+              <img src="images/johnny-deep.jpg" alt="">
               <div class="user-info">
-                  <h3>john deo</h3>
-                  <span>happy customer</span>
+                  <h3>Johny depp</h3>
+                  <span>tevreden</span>
               </div>
           </div>
           <span class="fas fa-quote-right"></span>
@@ -275,10 +272,10 @@
           </div>
           <p></p>
           <div class="user">
-              <img src="images/pic-2.png" alt="">
+              <img src="images/Aktris-Amber-Heard (1).jpg" alt="">
               <div class="user-info">
-                  <h3>john deo</h3>
-                  <span>happy customer</span>
+                  <h3>Amber Heard</h3>
+                  <span>ontevreden</span>
               </div>
           </div>
           <span class="fas fa-quote-right"></span>
@@ -294,10 +291,10 @@
           </div>
           <p></p>
           <div class="user">
-              <img src="images/pic-3.png" alt="">
+              <img src="images/joel.png" alt="">
               <div class="user-info">
-                  <h3>john deo</h3>
-                  <span>happy customer</span>
+                  <h3>joel beuker</h3>
+                  <span>Tevreden</span>
               </div>
           </div>
           <span class="fas fa-quote-right"></span>
@@ -321,11 +318,11 @@
       <div class="box-container">
   
           <div class="box">
-              <h3>quick links</h3>
+              <h3>Snelle links</h3>
               <a href="#">home</a>
-              <a href="#">about</a>
-              <a href="#">products</a>
-              <a href="#">review</a>
+              <a href="#">Over ons</a>
+              <a href="#">producten</a>
+              <a href="#">reviews</a>
           </div>
   
   
@@ -340,7 +337,7 @@
           <div class="box">
               <h3>contact info</h3>
               <a href="#"></a>
-              <a href="#">example@gmail.com</a>
+              <a href="#">Quinten@gmail.com</a>
               <a href="#"></a>
               <img src="images/payment.png" alt="">
           </div>
