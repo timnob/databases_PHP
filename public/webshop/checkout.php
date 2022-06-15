@@ -20,7 +20,7 @@
 
            if(filter_var($_POST['email'],FILTER_VALIDATE_EMAIL) == false)
            {
-                 $errorMsg[] = 'Please enter valid email address';
+                 $errorMsg[] = 'Gebruik een geldig email adres';
            }
            else
            {
@@ -50,7 +50,7 @@
                     
                     $getOrderID = $db->lastInsertId();
 
-                    if(isset($_SESSION['cart_items']) || !empty($_SESSION['cart_items']))
+                    if(isset($_SESSION['cart_items']) && !empty($_SESSION['cart_items'] ))
                     {
                         $sqlDetails = 'insert into order_details (order_id, product_id, product_name, product_price, qty, total_price) values(:order_id,:product_id,:product_name,:product_price,:qty,:total_price)';
                         $orderDetailStmt = $db->prepare($sqlDetails);
@@ -84,13 +84,13 @@
                         
                         unset($_SESSION['cart_items']);
                         $_SESSION['confirm_order'] = true;
-                        header('location:thank-you.php');
+                        header('location:bedankt.php');
                         exit();
                     }
                 }
                 else
                 {
-                    $errorMsg[] = 'Unable to save your order. Please try again';
+                    $errorMsg[] = 'Probeer opnieuw!';
                 }
            }
         }
@@ -100,7 +100,7 @@
 
             if(!isset($_POST['first_name']) || empty($_POST['first_name']))
             {
-                $errorMsg[] = 'First name is required';
+                $errorMsg[] = 'Voornaam vereist';
             }
             else
             {
@@ -109,7 +109,7 @@
 
             if(!isset($_POST['last_name']) || empty($_POST['last_name']))
             {
-                $errorMsg[] = 'Last name is required';
+                $errorMsg[] = 'Achternaam vereist';
             }
             else
             {
@@ -118,7 +118,7 @@
 
             if(!isset($_POST['email']) || empty($_POST['email']))
             {
-                $errorMsg[] = 'Email is required';
+                $errorMsg[] = 'Email vereist';
             }
             else
             {
@@ -127,7 +127,7 @@
 
             if(!isset($_POST['address']) || empty($_POST['address']))
             {
-                $errorMsg[] = 'Address is required';
+                $errorMsg[] = 'Address vereist';
             }
             else
             {
@@ -185,13 +185,12 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="firstName">Voornaam</label>
-                <input type="text" class="form-control" id="firstName" name="first_name" placeholder="First Name" value="<?php echo (isset($fnameValue) && !empty($fnameValue)) ? $fnameValue:'' ?>" >
+                <input type="text" class="form-control" id="firstName" name="first_name" placeholder="Achternaam" value="<?php echo (isset($fnameValue) && !empty($fnameValue)) ? $fnameValue:'' ?>" >
               </div>
               <div class="col-md-6 mb-3">
                 <label for="lastName">Achternaam</label>
-                <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Last Name" value="<?php echo (isset($lnameValue) && !empty($lnameValue)) ? $lnameValue:'' ?>" >
+                <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Voornaam" value="<?php echo (isset($lnameValue) && !empty($lnameValue)) ? $lnameValue:'' ?>" >
               </div>
-            </div>
 
             <div class="mb-3">
               <label for="email">Email</label>
@@ -200,20 +199,20 @@
 
             <div class="mb-3">
               <label for="address">Address</label>
-              <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" value="<?php echo (isset($addressValue) && !empty($addressValue)) ? $addressValue:'' ?>">
+              <input type="text" class="form-control" id="address" name="address" placeholder="Postcode en verzendadres" value="<?php echo (isset($addressValue) && !empty($addressValue)) ? $addressValue:'' ?>">
             </div>
 
             <div class="mb-3">
-              <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" name="address2" placeholder="Apartment or suite" value="<?php echo (isset($address2Value) && !empty($address2Value)) ? $address2Value:'' ?>">
+              <label for="address2">Address 2 <span class="text-muted">(Optioneel)</span></label>
+              <input type="text" class="form-control" id="address2" name="address2" placeholder="1a" value="<?php echo (isset($address2Value) && !empty($address2Value)) ? $address2Value:'' ?>">
             </div>
-
+            </div>
             <hr class="mb-4">
 
            
            
             
-            <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit" value="submit">Continue to checkout</button>
+            <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit" value="submit">Verzenden</button>
           </form>
         </div>
       </div>

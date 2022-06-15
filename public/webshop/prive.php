@@ -12,7 +12,7 @@ $column = isset($_GET['column']) && in_array($_GET['column'], $columns) ? $_GET[
 $sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
 
 // Get the result...
-if ($result = $mysqli->query('SELECT  first_name,last_name,email, address, address2, created_at, product_id, product_price, qty, total_price, product_name FROM orders, order_details ORDER BY ' .  $column . ' ' . $sort_order) ) {
+if ($result = $mysqli->query('SELECT first_name,last_name,email, address, address2, created_at, product_id, product_price, qty, total_price, product_name FROM orders, order_details ORDER BY ' .  $column . ' ' . $sort_order) ) {
 	// Some variables we need for the table.
 	$up_or_down = str_replace(array('ASC','DESC'), array('up','down'), $sort_order); 
 	$asc_or_desc = $sort_order == 'ASC' ? 'desc' : 'asc';
@@ -50,9 +50,9 @@ if ($result = $mysqli->query('SELECT  first_name,last_name,email, address, addre
 					<th><a href="prive.php?column=name&order=<?php echo $asc_or_desc; ?>">Adres2<i class="fas fa-sort<?php echo $column == 'address2' ? '-' . $up_or_down : ''; ?>"></i></a></th>
 					<th><a href="prive.php?column=name&order=<?php echo $asc_or_desc; ?>">Datum<i class="fas fa-sort<?php echo $column == 'created_at' ? '-' . $up_or_down : ''; ?>"></i></a></th>
 					<th><a href="prive.php?column=product_id&order=<?php echo $asc_or_desc; ?>">product_id<i class="fas fa-sort<?php echo $column == 'product_id' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-					<th><a href="prive.php?column=product_id&order=<?php echo $asc_or_desc; ?>">product_id<i class="fas fa-sort<?php echo $column == 'product_name' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-					<th><a href="prive.php?column=product_id&order=<?php echo $asc_or_desc; ?>">product_id<i class="fas fa-sort<?php echo $column == 'product_price' ? '-' . $up_or_down : ''; ?>"></i></a></th>
-					<th><a href="prive.php?column=product_id&order=<?php echo $asc_or_desc; ?>">product_id<i class="fas fa-sort<?php echo $column == 'qty' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+					<th><a href="prive.php?column=product_id&order=<?php echo $asc_or_desc; ?>">product_name<i class="fas fa-sort<?php echo $column == 'product_name' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+					<th><a href="prive.php?column=product_id&order=<?php echo $asc_or_desc; ?>">product_price<i class="fas fa-sort<?php echo $column == 'product_price' ? '-' . $up_or_down : ''; ?>"></i></a></th>
+					<th><a href="prive.php?column=product_id&order=<?php echo $asc_or_desc; ?>">qty<i class="fas fa-sort<?php echo $column == 'qty' ? '-' . $up_or_down : ''; ?>"></i></a></th>
 					<th><a href="prive.php?column=total_price&order=<?php echo $asc_or_desc; ?>">Prijs<i class="fas fa-sort<?php echo $column == 'total_price' ? '-' . $up_or_down : ''; ?>"></i></a></th>
 				</tr>
 				<?php while ($row = $result->fetch_assoc()): ?>

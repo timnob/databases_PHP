@@ -66,7 +66,9 @@
   <section class="about" id="about">
   
       <h1 class="heading"> <span> Over </span> ons </h1>
-  
+  <h2><span> vertegenwoordigt sport supplementen die 100% zuiver zijn, daarmee bedoelen we zonder toegevoegde suikers en / of aspartaam​​. Aangezien wij alleen de beste ingrediënten in onze producten willen, testen we de ingrediënten zelf voordat ze daadwerkelijk toegevoegd worden aan het eindproduct.
+
+Om de ultieme producten te ontwikkelen werken wij samen met diverse gerenommeerde farmaceutische bedrijven in Europa, waaronder een van de grootste in Nederland. Kortom, pure winst!</span></h2>
       <div class="row">
   
           <div class="video-container">
@@ -130,106 +132,37 @@
   
         
       <h1 class="heading"> Onze <span>producten</span> </h1>
-      <div class="box">
         <?php
         foreach($getAllProducts as $product)
         {
             $imgUrl = PRODUCT_IMG_URL.str_replace(' ','-',strtolower($product['product_name']))."/".$product['img'];
         ?>
-            <div class="col-md-3  mt-2">
-                <div class="card">
-                     <a href="single-product.php?product=<?php echo $product['id']?>">
-                        <img class="card-img-top" src="<?php echo $imgUrl ?>" alt="<?php echo $product['product_name'] ?>">
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="single-product.php?product=<?php echo $product['id'] ?>">
-                                <?php echo $product['product_name']; ?>
-                            </a>
-                        </h5>
-                        <strong>$ <?php echo $product['price']?></strong>
+        <div class="box-container">
+  
+  <div class="box">
+      
+      <div class="image">
+      <img class="card-img-top" src="<?php echo $imgUrl ?>" alt="<?php echo $product['product_name'] ?>">
+          <div class="icons">
+              
+          <a class="fas fa-share" href="single-product.php?product=<?php echo $product['id']?>">Bekijk</a>
+          </div>
+      </div>
+      <div class="content">
+      <h5 class="card-title">
+      <?php echo $product['product_name']; ?>
+          <div class="price">  <h5 class="card-title">
 
-                        <p class="card-t">
-                            <?php echo substr($product['short_description'],0,50) ?>'...
-                        </p>
-                        <p class="card-text">
-                            <a href="single-product.php?product=<?php echo $product['id']?>" class="btn btn-primary btn-sm">
-                                View
-                            </a>
-                        </p>
-                    </div>
+                        </h5><strong>$ <?php echo $product['price']?></strong> </div>
+      </div>
+  </div>
+        
                 </div>
-            </div>
+        </div>
         <?php 
         }
         ?>
-      <!-- <div class="box-container">
-  
-          <div class="box">
-              
-              <div class="image">
-                  <img src="images/creatine.png" alt="">
-                  <div class="icons">
-                      
-                      <a href="#" class="cart-btn">add to cart</a>
-                      <a href="#" class="fas fa-share"></a>
-                  </div>
-              </div>
-              <div class="content">
-                  <h3>flower pot</h3>
-                  <div class="price"> $12.99 </div>
-              </div>
-          </div>
-  
-          <div class="box">
-              
-              <div class="image">
-                  <img src="images/creatine.png" alt="">
-                  <div class="icons">
-                      
-                      <a href="#" class="cart-btn">add to cart</a>
-                      <a href="#" class="fas fa-share"></a>
-                  </div>
-              </div>
-              <div class="content">
-                  <h3>flower pot</h3>
-                  <div class="price"> $12.99 </div>
-              </div>
-          </div>
-  
-          <div class="box">
-              
-              <div class="image">
-                  <img src="images/creatine.png" alt="">
-                  <div class="icons">
-                     
-                      <a href="#" class="cart-btn">add to cart</a>
-                      <a href="#" class="fas fa-share"></a>
-                  </div>
-              </div>
-              <div class="content">
-                  <h3>flower pot</h3>
-                  <div class="price"> $12.99 </div>
-              </div>
-          </div>
-  
-          <div class="box">
-             
-              <div class="image">
-                  <img src="images/creatine.png" alt="">
-                  <div class="icons">
-                      
-                      <a href="#" class="cart-btn">add to cart</a>
-                      <a href="#" class="fas fa-share"></a>
-                  </div>
-              </div>
-              <div class="content">
-                  <h3>flower pot</h3>
-                  <div class="price"> $12.99 </div>
-              </div>
-          </div>
-  
-      </div> -->
+    
   
   </section>
   

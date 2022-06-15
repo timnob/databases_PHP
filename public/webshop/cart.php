@@ -10,13 +10,14 @@
         exit();
     }
    
-    if(isset($_GET['action'],$_GET['item']) && $_GET['action'] == 'update') 
-    {
-        if (is_numeric($id) && isset($_SESSION['cart_items'][$id]) && $quantity > 0) {
-            // Update new quantity
-            $_SESSION['cart_items'][$id] = $quantity;
-        }
-    }
+    // if(isset($_GET['action'],$_GET['item']) && $_GET['action'] == 'update') 
+    // {
+    //     $quantity= $_SESSION['qty'];
+    //     if (isset($_SESSION['cart_items']) && $quantity > 0) {
+            
+    //         $_SESSION['cart_items'] = $quantity;
+    //     }
+    
    	
     include('layouts/header.php');
 
@@ -53,7 +54,7 @@
                     
                     $total = $item['product_price'] * $item['qty'];
                     $totalCounter+= $total;
-                    $itemCounter= $item['qty'] + $quantity ;
+                    $itemCounter+= $item['qty'];
                     ?>
                     <tr>
                         <td>
