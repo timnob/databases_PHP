@@ -4,7 +4,7 @@ $mysqli = mysqli_connect('localhost', 'root', '', 'tshirt');
 require_once('./inc/config.php');  
 
 // For extra protection these are the columns of which the user can sort by (in your database table).
-$columns = array('first_name','last_name','email', 'address', 'address2', 'created_at', 'product_id','product_price', 'qty', 'total_price', 'product_name');
+$columns = array('first_name','last_name','email', 'address', 'address2', 'created_at', 'product_id','product_price', 'qty', 'product_name');
 // Only get the column if it exists in the above columns array, if it doesn't exist the database table will be sorted by the first item in the columns array.
 $column = isset($_GET['column']) && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0];
 
@@ -26,7 +26,6 @@ if ($result = $mysqli->query('SELECT  first_name,last_name,email, address, addre
 		<title>Bestellingen</title>
 		<link href="prive.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
-			<title>PHP & MySQL Table Sorting by CodeShack</title>
 			<meta charset="utf-8">
 			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		</head>

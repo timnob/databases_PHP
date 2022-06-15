@@ -5,9 +5,9 @@ CREATE TABLE `accounts` (
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
-INSERT INTO `accounts` (`id`, `username`, `password`) VALUES (1,'t','1');
+INSERT INTO `accounts` (`id`, `username`, `password`) VALUES (1,'Tim','123'),(2,'Quinten','123');
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `order_details` (
@@ -21,7 +21,6 @@ CREATE TABLE `order_details` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-INSERT INTO `order_details` (`id`, `order_id`, `product_id`, `product_name`, `product_price`, `qty`, `total_price`) VALUES (14,11,1,'Whey Proteine',9.50,1,9.50),(15,13,1,'Whey Proteine',9.50,1,9.50),(16,13,2,'Creatine Pot',9.50,1,9.50),(17,13,3,'Buffel Breakfast',9.50,1,9.50);
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `orders` (
@@ -31,12 +30,10 @@ CREATE TABLE `orders` (
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
   `address2` varchar(255) DEFAULT NULL,
-  `total_price` float(6,2) NOT NULL DEFAULT '0.00',
   `created_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-INSERT INTO `orders` (`id`, `first_name`, `last_name`, `email`, `address`, `address2`, `total_price`, `created_at`) VALUES (11,'hoi','hoi','you@example.com','1234','1234',9.50,'2022-06-13 14:52:47'),(12,'ff','ff','you@example.com','111','111',0.00,'2022-06-13 15:10:08');
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `product_images` (

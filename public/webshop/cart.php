@@ -9,27 +9,26 @@
         header('location:cart.php');
         exit();
     }
-    if(isset($_POST['update'])) 
+   
+    if(isset($_GET['action'],$_GET['item']) && $_GET['action'] == 'update') 
     {
         if (is_numeric($id) && isset($_SESSION['cart_items'][$id]) && $quantity > 0) {
             // Update new quantity
-            $_SESSION['cart'][$id] = $quantity;
+            $_SESSION['cart_items'][$id] = $quantity;
         }
     }
-	$pageTitle = 'Demo PHP Shopping cart - Add to cart using Session';
-	$metaDesc = 'Demo PHP Shopping cart - Add to cart using Session';
-	
+   	
     include('layouts/header.php');
 
     //pre($_SESSION);
 ?>
 <div class="row1">
-    <div class="col-md-12">
+    <div class="col-md-12"style="padding: 10em;">
         <?php if(empty($_SESSION['cart_items'])){?>
         <table class="table">
             <tr>
                 <td>
-                    <p>Your cart is emty</p>
+                    <p>Uw winkelwagen is leeg</p>
                 </td>
             </tr>
         </table>
@@ -54,26 +53,27 @@
                     
                     $total = $item['product_price'] * $item['qty'];
                     $totalCounter+= $total;
-                    $itemCounter+=$item['qty'];
+                    $itemCounter= $item['qty'] + $quantity ;
                     ?>
                     <tr>
                         <td>
-                            <img src="<?php echo $imgUrl; ?>" class="rounded img-thumbnail mr-2" style="width:60px;"><?php echo $item['product_name'];?>
-                            
+                            <img src="<?php echo $imgUrl; ?>" class="rounded img-thumbnail mr-2" style="width: 2.5em;"><?php echo $item['product_name'];?>
                             <a href="cart.php?action=remove&item=<?php echo $key?>" class="text-danger">
-                                <i class="bi bi-trash-fill"></i>
+                                <img class="bi bi-trash-fill" src="images/prul.png"></img>
                             </a>
-
+                       
                         </td>
                         <td>
                             $<?php echo $item['product_price'];?>
                         </td>
                         <td>
-                            <input type="number" name="" class="cart-qty-single" data-item-id="<?php echo $key?>" value="<?php echo $item['qty'];?>" min="1" max="1000" >
+                            <input type="number" class="cart-qty-single" data-item-id="<?php echo $key?>" value="<?php echo $item['qty'];?>" min="1" max="1000" >
                         </td>
                         <td>
                             <?php echo $total;?>
                         </td>
+                        
+                       
                     </tr>
                 <?php }?>
                 <tr class="border-top border-bottom">
@@ -91,7 +91,6 @@
             </tbody> 
         </table>
         <div class="row">
-            <div class="col-md-11">
 				<a href="checkout.php">
 					<button class="btn btn-primary btn-lg float-right">Checkout</button>
 				</a>

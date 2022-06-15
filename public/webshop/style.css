@@ -494,8 +494,7 @@ header .fa-bars{
     margin-top: 1.5rem;
     padding-top: 2.5rem;
     font-size: 2rem;
-    color:#333;
-    border-top: .1rem solid rgba(0,0,0,.1);
+
        padding-bottom: 9rem;
 }
 
@@ -520,9 +519,14 @@ header .fa-bars{
     font-size: 30px;
     text-align: center;
 }
+tbody td input{
+    text-align: center;
+    font-size: 1em;
+}
 
-
-
+td a img{
+width: 1em;
+}
 
 
 
