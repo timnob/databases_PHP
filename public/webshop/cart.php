@@ -1,7 +1,6 @@
 <?php 
     session_start();
     require_once('./inc/config.php');    
-    // require_once('./inc/helpers.php');  
 
     if(isset($_GET['action'],$_GET['item']) && $_GET['action'] == 'remove')
     {
@@ -10,18 +9,17 @@
         exit();
     }
    
-    // if(isset($_GET['action'],$_GET['item']) && $_GET['action'] == 'update') 
-    // {
-    //     $quantity= $_SESSION['qty'];
-    //     if (isset($_SESSION['cart_items']) && $quantity > 0) {
+    if(isset($_GET['action'],$_GET['item']) && $_GET['action'] == 'update') 
+    {
+        $quantity= $_SESSION['qty'];
+        if (isset($_SESSION['cart_items']) && $quantity > 0) {
             
-    //         $_SESSION['cart_items'] = $quantity;
-    //     }
-    
+            $_SESSION['cart_items'] = $quantity;
+        }
+    }
    	
     include('layouts/header.php');
 
-    //pre($_SESSION);
 ?>
 <div class="row1">
     <div class="col-md-12"style="padding: 10em;">
@@ -39,9 +37,9 @@
            <thead>
                 <tr>
                     <th>Product</th>
-                    <th>Price</th>
-                    <th>Qty</th>
-                    <th>Total</th>
+                    <th>Prijs</th>
+                    <th>Hoeveelheid</th>
+                    <th>Totaal aankoopbedrag</th>
                 </tr>
             </thead>
             <tbody>
@@ -93,7 +91,7 @@
         </table>
         <div class="row">
 				<a href="checkout.php">
-					<button class="btn btn-primary btn-lg float-right">Checkout</button>
+					<button class="btn btn-primary btn-lg float-right">Betaling</button>
 				</a>
             </div>
             

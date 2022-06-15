@@ -107,7 +107,7 @@ include('layouts/header.php');
                         <input type="hidden" name="product_id" value="<?php echo $getProductData['id']?>">
                     </div>
                     <div class="form-group mb-2 ml-2">
-                        <button type="submit" class="btn btn-primary" name="add_to_cart" value="add to cart">Add to Cart</button>
+                        <button type="submit" class="btn btn-primary" name="add_to_cart" value="add to cart">Toevoegen</button>
                     </div>
                 </form>
                 
@@ -115,7 +115,9 @@ include('layouts/header.php');
         </div>
         <div class="row mt-3">
             <div class="col-md-12">
+                <h1>
                 <?php echo $getProductData['full_description']?>
+                </h1>
             </div>
         </div>
 

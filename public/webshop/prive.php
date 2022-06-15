@@ -1,19 +1,18 @@
 <?php
-$mysqli = mysqli_connect('localhost', 'root', '', 'tshirt');
-// Below is optional, remove if you have already connected to your database.
+$mysqli = mysqli_connect('localhost', 'root', '', 'webshop');
+
 require_once('./inc/config.php');  
 
-// For extra protection these are the columns of which the user can sort by (in your database table).
+
 $columns = array('first_name','last_name','email', 'address', 'address2', 'created_at', 'product_id','product_price', 'qty', 'product_name');
-// Only get the column if it exists in the above columns array, if it doesn't exist the database table will be sorted by the first item in the columns array.
+
 $column = isset($_GET['column']) && in_array($_GET['column'], $columns) ? $_GET['column'] : $columns[0];
 
-// Get the sort order for the column, ascending or descending, default is ascending.
+
 $sort_order = isset($_GET['order']) && strtolower($_GET['order']) == 'desc' ? 'DESC' : 'ASC';
 
-// Get the result...
 if ($result = $mysqli->query('SELECT first_name,last_name,email, address, address2, created_at, product_id, product_price, qty, total_price, product_name FROM orders, order_details ORDER BY ' .  $column . ' ' . $sort_order) ) {
-	// Some variables we need for the table.
+
 	$up_or_down = str_replace(array('ASC','DESC'), array('up','down'), $sort_order); 
 	$asc_or_desc = $sort_order == 'ASC' ? 'desc' : 'asc';
 	$add_class = ' class="highlight"';
@@ -33,7 +32,6 @@ if ($result = $mysqli->query('SELECT first_name,last_name,email, address, addres
 		<nav class="navtop">
 			<div>
 				<h1>Admin</h1>
-				<!-- <a href="profile.php"><i class="fas fa-user-circle"></i>Profile</a> -->
 				<a href="loguit.php"><i class="fas fa-sign-out-alt"></i>Loguit</a>
 				
 			</div>
@@ -81,4 +79,3 @@ if ($result = $mysqli->query('SELECT first_name,last_name,email, address, addres
 }
 ?>
 
-<!--  -->

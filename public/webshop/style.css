@@ -516,9 +516,19 @@ header .fa-bars{
     font-size: 20px;
     box-sizing: border-box;
     text-align: center;
-    margin-bottom: 40px;
-    margin-left: 100px;
-    
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-top: 50px;
+    color:#333;
+    border-top: .1rem solid rgba(0,0,0,.1);
+}
+.row.mt-3 .col-md-12 h1{
+    font-size: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-top: 50px;
 }
 
 .row.mt-3 .col-md-7 p{
@@ -526,6 +536,7 @@ header .fa-bars{
     text-align: center;
     margin-bottom: 5px;
     margin-left: 100px;
+    
 }
 
 
@@ -536,14 +547,75 @@ header .fa-bars{
      margin-left: 50px;
 }
 
-
-.row.mt-3 .col-md-5 img{
-    width: 100%;
-    height: 50%;
-    margin-right: 50px;
-    margin-left: 50px;
+.row.mt-3 .col-md-7 h4{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+     margin-left: 200px; 
+     color: red;
 }
 
+
+.row.mt-3 .col-md-5 img{
+    width: 50%;
+    height: 30%;
+    margin-right: 50px;
+    margin-left: 500px;
+    margin-top: 110px;
+    border:5px solid black(0, 0, 0, 0.1);
+    border-radius: .5rem;
+}
+.row.mt-3 .form-inline{
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 20px;
+     margin-left: 70px; 
+     color: red;
+}
+
+.row.mt-3 .form-inline .form-group.mb-2 input{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+     margin-right: 50px;
+     color: red;
+}
+.row.mt-2  {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20em;
+     color: black;
+    
+}
+.row.mt-2  h4{
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 2em;
+     color: black;
+    
+}
+.col-md-8 .order-md-1 h4{
+ text-align: center;
+}
+ .needs-validation .row{
+    font-size: 4em;
+    text-align: left;
+     color: black;
+    margin-right: auto;
+    box-sizing: border-box;
+    color:#333;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    
+    
+}
+.row .btn{
+    font-size: 30px;
+    text-align: center;
+    float: right;
+     width: 50%;
+     color: white;
+ 
+}
 tbody td input{
     text-align: center;
     font-size: 1em;
@@ -553,22 +625,44 @@ td a img{
 width: 1em;
 }
 
-.row.mt-3 .col-md-4.order-md-2.mb-4 {
-    margin-top: 15em;
-    float: right;
-    margin-right: 15em;
-    font-size: 2em;
+.row.mt-2 .col-md-4.order-md-2.mb-4 {
+        font-size: 2em;
+        text-align: center;
+        color: black;
+        padding-top: 5em;
+        font-size: 1em;
+        color:#333;
+     border-top: .1rem solid rgba(0,0,0,.1);
 }
-.row.mt-3 .row {
-    margin-top: 15em;
-    float: right;
-    margin-right: 15em;
-    font-size: 2em;
-}
+.row.mt-2 .col-md-4.order-md-2.mb-4 li{
 
-.row.mt-3 .row button{
+        font-size: 2em;
+        text-align: center;
+         color: black;
+    font-size: 2em;
+    color:#333;
+    
+    border-top: .1rem solid rgba(0,0,0,.1);
+}
+.col-md-8.order-md-1{
+    font-size: 1em;
+    margin: auto;
+  width: 50%;
+
+}
+.col-md-8.order-md-1 h4{
+    font-size: 2.5em;
+}
+ .row .col-md-6.mb-3{
+    font-size: 0.5em;
+    
+}
+.row .mb-3{
+    font-size: 0.5em;
+    
+}
+ .row button{
     margin-top: 1em;
-    float: right;
     margin-right: 15em;
     font-size: 2em;
 }

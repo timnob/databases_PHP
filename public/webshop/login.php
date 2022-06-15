@@ -9,7 +9,7 @@ if(isset($_POST['username']) ) {
 	$servernaam = "localhost";
 	$gebruikersnaam = "root";
 	$wachtwoord = "";
-	$database = "tshirt";
+	$database = "webshop";
 	$DBverbinding = mysqli_connect($servernaam, $gebruikersnaam, $wachtwoord, $database);
 
 if (!$DBverbinding) {
@@ -26,17 +26,15 @@ else {
 	  exit();
 	}
 	if ($_POST['password'] === $password) {
-		// Verification success! User has logged-in!
-		// Create sessions, so we know the user is logged in, they basically act like cookies but remember the data on the server.
 		$_SESSION['loggedin'] = TRUE;
 		$_SESSION['name'] = $_POST['username'];
 		echo 'Welcome ' . $_SESSION['name'] . '!';
 	} else {
-		// Incorrect password
+
 		header("Location: loginhome.html");
 	}
 } else {
-	// Incorrect username
+
 	header("Location: loginhome.html");
 }
 

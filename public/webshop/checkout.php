@@ -10,8 +10,7 @@
     require_once('./inc/config.php');    
     $cartItemCount = count($_SESSION['cart_items']);
 
-    //pre($_SESSION);
-
+    
     if(isset($_POST['submit']))
     {
         if(isset($_POST['first_name'],$_POST['last_name'],$_POST['email'],$_POST['address']) && !empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['email']) && !empty($_POST['address']))
@@ -24,8 +23,7 @@
            }
            else
            {
-               //validate_input is a custom function
-               //you can find it in helpers.php file
+
                 $firstName  = ($_POST['first_name']);
                 $lastName   = ($_POST['last_name']);
                 $email      = ($_POST['email']);
@@ -146,12 +144,13 @@
 	
     include('layouts/header.php');
 ?>
-<div class="row mt-3">
+<div class="row mt-2">
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Winkelwagen</span>
             <span class="badge badge-secondary badge-pill"><?php echo $cartItemCount;?></span>
           </h4>
+        </div>
           <ul class="list-group mb-3">
             <?php
                 $total = 0;
@@ -166,11 +165,11 @@
            
             <li class="list-group-item d-flex justify-content-between">
               <span>Totaal bedrag</span>
-              <strong>$<?php echo number_format($total,2);?></strong>
+              <strong>€<?php echo number_format($total,2);?></strong>
             </li>
           </ul>
         </div>
-        <div class="col-md-8 ">
+        <div class="col-md-8 order-md-1">
           <h4 class="mb-3">Factuur adress</h4>
           <?php 
             if(isset($errorMsg) && count($errorMsg) > 0)
@@ -214,6 +213,5 @@
             
             <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit" value="submit">Verzenden</button>
           </form>
-        </div>
       </div>
 <?php include('layouts/footer.php'); ?>

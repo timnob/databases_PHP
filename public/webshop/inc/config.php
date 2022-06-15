@@ -1,5 +1,5 @@
 <?php
-$check = 'mysql:dbname=tshirt;host=localhost';
+$check = 'mysql:dbname=webshop;host=localhost';
 $gebruikersnaam = 'root';
 $wachtwoord = '';
 
