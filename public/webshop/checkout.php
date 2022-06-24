@@ -46,8 +46,7 @@
                 if($statement->rowCount() == 1)
                 {
                     
-                    $getOrderID = $db->lastInsertId();
-
+                    
                     if(isset($_SESSION['cart_items']) && !empty($_SESSION['cart_items'] ))
                     {
                         $sqlDetails = 'insert into order_details (order_id, product_id, product_name, product_price, qty, total_price) values(:order_id,:product_id,:product_name,:product_price,:qty,:total_price)';
@@ -59,7 +58,7 @@
                             $totalPrice+=$item['total_price'];
 
                             $paramOrderDetails = [
-                                'order_id' =>  $getOrderID,
+                                'order_id' =>  $item['order_id'],
                                 'product_id' =>  $item['product_id'],
                                 'product_name' =>  $item['product_name'],
                                 'product_price' =>  $item['product_price'],
